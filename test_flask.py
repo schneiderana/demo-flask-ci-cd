@@ -1,19 +1,13 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
+""" fait hello world dans un navigateur"""
 
-# Ne pas se soucier de ces imports
-from flask import Flask, render_template, session, request, redirect, flash
+from flask import Flask
 
-app = Flask(__name__)
+APP = Flask(__name__)
 
-app.secret_key = "TODO: mettre une valeur secrète ici"
-
-
-@app.route('/', methods=['GET'])
+@APP.route("/")
 def index():
-    return render_template('index.html', message="Hello World")
+    """ecrit hello world"""
+    return "Hello World"
 
-# Si vous définissez de nouvelles routes, faites-le ici
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    APP.run(host="0.0.0.0")
